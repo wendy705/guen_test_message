@@ -39,7 +39,7 @@ class Server(BaseHTTPRequestHandler):
         except ValueError:
             message = None
 
-        if not message or 'prompt' not in message or 'token_count' not in message or 'temperature' not in message or 'n_gen' not in message:
+        if not message or 'prompt' not in message:
             self.send_response(400)
             self.send_header('Content-type', 'application/json')
             self.end_headers()
